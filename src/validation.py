@@ -21,4 +21,4 @@ def check_number(num):
 
 # Example usage:
 print(check_number(1.5))
-print(check_number(3))
+print(check_number(6))
