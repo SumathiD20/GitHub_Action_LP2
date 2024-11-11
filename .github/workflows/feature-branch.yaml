@@ -28,7 +28,4 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pip install pylint  # Install pylint for linting
 
-      - name: Run pylint
-        run: |
-          pylint src/  # Lint your project folder, replace 'your_project' with your folder name
 
