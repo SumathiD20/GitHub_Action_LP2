@@ -5,6 +5,12 @@ on:
   issues:
     types: [opened]
 
+permissions:
+  issues: write
+  pull-requests: write
+  contents: write
+
+
 jobs:
   label:
     runs-on: ubuntu-latest
