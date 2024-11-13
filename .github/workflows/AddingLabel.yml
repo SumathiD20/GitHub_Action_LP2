@@ -10,7 +10,6 @@ permissions:
   pull-requests: write
   contents: write
 
-
 jobs:
   label:
     runs-on: ubuntu-latest
