@@ -1,24 +1,16 @@
 # This githiib action adds auto assign labels referring some keywords
-name: "Auto assign Labels"
-
+name: "Issue Auto Labeling"
 on:
   issues:
     types: [opened]
 
-permissions:
-  issues: write
-  pull-requests: write
-  contents: write
-
 jobs:
-  label:
+  testing:
     runs-on: ubuntu-latest
     steps:
-    - name: Label issues based on content
-      uses: actions-ecosystem/action-add-labels@v1
-      with:
-        github_token: "${{ secrets.GITHUB_TOKEN }}"
-        labels: |
-          bug, if: "bug in title or body"
-          enhancement, if: "feature in title or body"
-          documentation, if: "document in title or body"
+      - uses: actions/checkout@v1
+      - uses: ./
+        with:
+          title-or-body: "both"
+          parameters: [ {"keywords": ["bug", "error"], "labels": ["bug"]}, {"keywords": ["doc", "document"], "labels": ["documentaion"]}]
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
