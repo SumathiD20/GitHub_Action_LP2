@@ -3,10 +3,10 @@ name: Feature Branch Workflow
 on:
   push:
     branches:
-      - 'feature/*'
+      - 'feat*'
   pull_request:
     branches:
-      - 'feature/*' 
+      - 'feat*' 
       - main
 
 jobs:
@@ -28,4 +28,4 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pip install pylint  # Install pylint for linting
 
-    
+

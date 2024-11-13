@@ -1,0 +1,19 @@
+# This githiib action adds auto assign labels referring some keywords
+name: "Auto assign Labels"
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Label issues based on content
+      uses: actions-ecosystem/action-add-labels@v1
+      with:
+        github_token: "${{ secrets.GITHUB_TOKEN }}"
+        labels: |
+          bug, if: "bug in title or body"
+          enhancement, if: "feature in title or body"
+          documentation, if: "document in title or body"
