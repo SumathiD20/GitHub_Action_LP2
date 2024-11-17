@@ -7,6 +7,6 @@ on:
 
 jobs:
   run-build-and-test:
-    uses: .github/workflows/feature-branch.yml
+    uses: owner/repo/.github/workflows.github/workflows/feature-branch.yml@main
     with:
       branch: ${{ github.ref_name }}
