@@ -3,7 +3,7 @@ name: Feature Branch caller
 on:
   push:
     branches:
-      - feature/*
+      - main
 
 jobs:
   run-build-and-test:
