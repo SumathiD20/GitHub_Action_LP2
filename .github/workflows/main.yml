@@ -1,0 +1,12 @@
+name: Feature Branch Workflow
+
+on:
+  push:
+    branches:
+      - feature/*
+
+jobs:
+  run-build-and-test:
+    uses: ./.github/workflows/feature-branch.yml
+    with:
+      branch: ${{ github.ref_name }}
