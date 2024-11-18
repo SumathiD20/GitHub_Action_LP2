@@ -1,4 +1,4 @@
-name: Feature Branch caller
+name: Caller Workflow
 
 on:
   push:
@@ -6,7 +6,9 @@ on:
       - main
 
 jobs:
-  run-build-and-test:
-    uses: owner/repo/.github/workflows.github/workflows/feature-branch.yml@main
+  use-reusable:
+    uses: owner/repo/.github/workflows/feature-branch.yml@main
     with:
-      branch: ${{ github.ref_name }}
+      input-name: value
+    secrets:
+      SECRET_NAME: ${{ secrets.SECRET_NAME }}
