@@ -7,6 +7,6 @@ on:
 
 jobs:
   reuse:
-    uses: ./.github/workflows/feature-branch.yml
+    uses: ./.github/workflows/feature-branch.yaml
     with:
       branch: main
