@@ -1,13 +1,14 @@
 name: Feature Branch Workflow
 
+
+
 on:
-  push:
-    branches:
-      - 'feat*'
-  pull_request:
-    branches:
-      - 'feat*' 
-      - main
+  workflow_call:
+    inputs:
+      branch:
+        description: "Branch to use"
+        required: true
+        type: string
 
 jobs:
   lint:
