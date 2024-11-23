@@ -29,4 +29,5 @@ jobs:
     - name: Run tests
       run: |
         export PYTHONPATH=src
+        export PYTHONPATH=testing
         python -m unittest discover -s testing -p "*test*.py"
